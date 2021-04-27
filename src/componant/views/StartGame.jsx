@@ -3,6 +3,8 @@ import React from "react";
 class StartGame extends React.Component {
   render() {
     return (
+
+      // Ce bout de code permet de lancer le jeux avec le bouton start
       <div className='game'>
         <h1>Black Jack</h1>
         <div>
