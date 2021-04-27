@@ -13,11 +13,11 @@ const cardArray = [
   "KH", "QH", "JH", "AH", "2H", "3H", "4H", "5H", "6H", "7H", "8H", "9H", "0H",
   "KC", "QC", "JC", "AC", "2C", "3C", "4C", "5C", "6C", "7C", "8C", "9C", "0C"];
 
-
+// ce bout de code représente le debut du jeux et la fin
 let arrayLength = 0
-console.log(arrayLength);
 let rndCarteTemp = "";
 let rndNumTemp = 0;
+
 
 
 class Table extends React.Component {
@@ -25,6 +25,8 @@ class Table extends React.Component {
     super();
 
     this.state = {
+
+      
       counterPlayer: 0,
       counterDealer: 0,
       playerCardList: [],
@@ -34,24 +36,32 @@ class Table extends React.Component {
       endGame: false,
       nameOfWinner: ""
     }
-  }
+  } 
+
+  // le this.state au dessu nous permet de demarer le jeux des 2 joueurs à 0, d'afficher qui est le gagnant
 
   rndCarte() {
+    // le arrayLengt nous permet de savoir combien le player à de carte sur le tapis 
     arrayLength = + this.state.playerCardList.length;
+    // console.log("mon arrayLength", arrayLength = + this.state.playerCardList.length);
+    
 
+    // rndNumTemp = Math.floor(Math.random() * 53); permet de donner les carte de maniere aléatoire
     rndNumTemp = Math.floor(Math.random() * 53);
+    // console.log("mon rndnumtemp", rndNumTemp = Math.floor(Math.random() * 53));
 
     if (rndNumTemp > 52) { rndNumTemp = rndNumTemp - 10 } else if (rndNumTemp < 1) { rndNumTemp = rndNumTemp + 10 }
 
-    // ce bout de code permet de nous donner la valeur d'une carte
+    // ce bout de code permet de distribué les cartes avec les valeurs
     rndCarteTemp = cardArray[rndNumTemp - 1];
-// console.log("rndCarteTemp", rndCarteTemp);
     return rndCarteTemp
   }
 
   onClickStop = () => {
     const cardSelectedDealer = this.rndCarte()
     const cardSelectedDealer2 = this.rndCarte()
+    // console.log("cardSelectedDealer2",cardSelectedDealer2); donne le nom de la 2ème carte
+    // console.log("cardSelectedDealer", cardSelectedDealer);
 
     const valueCarteDealer = this.transformCardIntoInt(cardSelectedDealer.split("")[0])
     const valueCarteDealer2 = this.transformCardIntoInt(cardSelectedDealer2.split("")[0])
