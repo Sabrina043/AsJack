@@ -19,6 +19,8 @@ const cardArray = [
 let arrayLength = 0
 let rndCarteTemp = "";
 let rndNumTemp = 0;
+
+
 class Table extends React.Component {
   constructor() {
     super();
@@ -64,9 +66,7 @@ class Table extends React.Component {
     }
 
     while (dealerValue < 17) {
-      const cardSelectedDealer = this.rndCarte()
-      const valueCarteDealer = this.transformCardIntoInt(cardSelectedDealer.split("")[0])
-
+      
       cardsDealer.push(cardSelectedDealer)
 
       dealerValue += valueCarteDealer
@@ -140,7 +140,7 @@ class Table extends React.Component {
     const firstTwoCardsPlayer = [cardSelected, cardSelected2]
 
     this.setState({
-      counterPlayer: firstPlayerValue,
+      
       playerCardList: firstTwoCardsPlayer,
       startGame: true
     })
