@@ -3,7 +3,7 @@ import "./App.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from './componant/outils/Button.jsx';
 import Cartes from "./componant/outils/Cartes";
-import Game from './componant/views/Game.jsx'
+import Game from './componant/views/StartGame.jsx'
 
 const cardArray = [
   "KS", "QS", "JS", "AS", "2S", "3S", "4S", "5S", "6S", "7S", "8S", "9S", "0S",
